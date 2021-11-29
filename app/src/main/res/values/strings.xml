@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Lifeguard</string>
+    <string name="saudacao">Seja bem vindo!</string>
+    <string name="view_tarefas">Tarefas</string>
+    <string name="add_tarefas">Cadastrar Tarefas</string>
+    <string name="add_tarefa">Adicionar Tarefa</string>
 </resources>
