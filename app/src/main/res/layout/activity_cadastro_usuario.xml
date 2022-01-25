@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".CadastroUsuario">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,13 +18,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/saudacao"
-        android:textSize="30sp" />
+        android:text="Formulario de cadastro de Usuario"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Nome: " />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="digite o seu nome"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="12dp">
 
@@ -63,17 +84,17 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_cadastrar_novo_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Login" />
+        android:text="cadastrar" />
 
     <Button
-        android:id="@+id/btn_novo_cadastro_usuario"
+        android:id="@+id/btn_voltar_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Fazer um novo cadastro" />
+        android:text="Fazer login" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

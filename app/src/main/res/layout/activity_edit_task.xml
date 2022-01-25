@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="6dp"
-    tools:context=".RegisterTaskActivity">
+    tools:context=".EditTask">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="25dp"
-        android:text="Cadastrar Nova Tarefa"
+        android:text="Editar Tarefa"
         android:textAlignment="center"
         android:textSize="30sp" />
 
@@ -40,14 +41,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="Nome da Tarefa: "/>
+            android:text="Nome da Tarefa: " />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:hint="informe o nome da tarefa"
-            android:inputType="text"/>
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,15 +60,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descrição:"/>
+            android:text="Descrição:" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:height="300dp"
             android:hint="Tarefa ..."
-            android:textAlignment="inherit"
-            android:inputType="text|textMultiLine" />
+            android:inputType="text|textMultiLine"
+            android:textAlignment="inherit" />
     </LinearLayout>
 
     <Button
@@ -75,7 +76,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:text="@string/add_tarefa" />
-
+        android:text="editar tarefa" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

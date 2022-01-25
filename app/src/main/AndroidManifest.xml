@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lifeguard">
         <activity
+            android:name=".EditTask"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroUsuario"
+            android:exported="false" />
+        <activity
             android:name=".RegisterTaskActivity"
             android:exported="false" />
         <activity
