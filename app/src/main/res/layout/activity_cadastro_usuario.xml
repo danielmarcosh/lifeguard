@@ -36,6 +36,7 @@
             android:text="Nome: " />
 
         <EditText
+            android:id="@+id/cadastro_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="digite o seu nome"
@@ -56,6 +57,7 @@
             android:text="Email: " />
 
         <EditText
+            android:id="@+id/cadastro_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="digite o seu e-mail"
@@ -76,6 +78,7 @@
             android:text="Senha: " />
 
         <EditText
+            android:id="@+id/cadastro_senha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="digite a sua senha"
@@ -91,7 +94,7 @@
         android:text="cadastrar" />
 
     <Button
-        android:id="@+id/btn_voltar_home"
+        android:id="@+id/btn_ir_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"

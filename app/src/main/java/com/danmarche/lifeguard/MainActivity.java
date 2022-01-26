@@ -4,57 +4,73 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import com.danmarche.lifeguard.dao.TarefaDAO;
 import com.danmarche.lifeguard.dao.UsuarioDAO;
-import com.danmarche.lifeguard.modelo.Tarefa;
-import com.danmarche.lifeguard.modelo.Usuario;
-
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    private Button ir_tarefasBtn;
+    private Button loginBtn;
+    private Button cadastroBtn;
+    private EditText emailEditText;
+    private EditText senhaEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ir_tarefasBtn = findViewById(R.id.btn_tarefas);
+        loginBtn = findViewById(R.id.btn_login);
+        cadastroBtn = findViewById(R.id.btn_ir_cadastro_usuario);
+        emailEditText = findViewById(R.id.edit_text_email_login);
+        senhaEditText = findViewById(R.id.edit_text_senha_login);
 
         initialize();
-
-        testeInserir();
 
     }
 
     private void initialize() {
-        ir_tarefasBtn.setOnClickListener(new View.OnClickListener() {
+        cadastroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent janela_tarefas = new Intent(MainActivity.this, TaskActivity.class);
+                Intent janela_tarefas = new Intent(MainActivity.this, CadastroUsuario.class);
                 startActivity(janela_tarefas);
             }
         });
+
+        login();
     }
 
-    private void testeInserir() {
-        //Usuario usuario = new Usuario("Daniel", "daniel@email.com", "123");
-        //UsuarioDAO usuarioDAO = new UsuarioDAO(MainActivity.this);
-
-        //long id = usuarioDAO.inserir(usuario);
-
-
-        // Log.d("Usuario: ", usuario.toString());
-
-        Tarefa tarefa = new Tarefa("Trabalho 1", "A fazer", new Date().getTime(), 1);
-        TarefaDAO tarefaDAO = new TarefaDAO(MainActivity.this);
-        tarefaDAO.inserir(tarefa);
+    private void login() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(MainActivity.INPUT_METHOD_SERVICE);
+                if (imm.isActive())
+                    imm.hideSoftInputFromWindow(getWindow().getDecorView().getRootView().getWindowToken(), 0);
 
 
-        Log.d("Tarefa: ", tarefa.toString());
+                String email = String.valueOf(emailEditText.getText());
+                String senha = String.valueOf(senhaEditText.getText());
+
+                UsuarioDAO usuarioDAO = new UsuarioDAO(MainActivity.this);
+
+                boolean resultado = usuarioDAO.autenticar(email, senha);
+
+                if (!resultado) {
+                    Toast.makeText(getApplicationContext(), "Usuario ou senha incorretos", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent janela_tarefas = new Intent(MainActivity.this, TaskActivity.class);
+                    startActivity(janela_tarefas);
+
+                }
+
+
+            }
+        });
+
     }
 }

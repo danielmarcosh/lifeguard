@@ -17,7 +17,7 @@ import java.util.Locale;
 public class RegisterTaskActivity extends AppCompatActivity {
 
     private Button voltar_tarefaBtn;
-    private EditText dataTxt;
+    // private EditText dataTxt;
     Calendar myCalendar = Calendar.getInstance();
 
     @Override
@@ -26,7 +26,7 @@ public class RegisterTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register_task);
 
         voltar_tarefaBtn = findViewById(R.id.btn_voltar_registrar);
-        dataTxt = findViewById(R.id.data);
+        // dataTxt = findViewById(R.id.data);
 
         initialize();
     }
@@ -55,15 +55,15 @@ public class RegisterTaskActivity extends AppCompatActivity {
             }
 
         };
-        dataTxt.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                new DatePickerDialog(RegisterTaskActivity.this, date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
+//        dataTxt.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                new DatePickerDialog(RegisterTaskActivity.this, date, myCalendar
+//                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+//                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+//            }
+//        });
 
 
     }
@@ -73,6 +73,6 @@ public class RegisterTaskActivity extends AppCompatActivity {
         String myFormat = "dd/MM/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, new Locale("pt", "BR"));
 
-        dataTxt.setText(sdf.format(myCalendar.getTime()));
+//        dataTxt.setText(sdf.format(myCalendar.getTime()));
     }
 }

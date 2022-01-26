@@ -2,7 +2,9 @@ package com.danmarche.lifeguard.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.danmarche.lifeguard.modelo.Usuario;
 import com.danmarche.lifeguard.persistencia.LifeGuardBDSQLite;
@@ -33,6 +35,21 @@ public class UsuarioDAO {
 
         return id;
     }
+
+    public boolean autenticar(String email, String senha) {
+        boolean resultado = false;
+        Cursor tulpas = this.banco.rawQuery("SELECT email, senha FROM usuario WHERE email = ? AND senha = ?", new String[]{email, senha});
+
+        if (tulpas.moveToFirst()) {
+            resultado = true;
+
+        }
+        Log.d("Resultado: ", String.valueOf(resultado));
+        tulpas.close();
+        fecharConexao();
+        return resultado;
+    }
+
 
     private void abrirConexao() {
         this.banco = this.lifeGuardBDSQLite.getWritableDatabase();
