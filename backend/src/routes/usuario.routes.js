@@ -5,6 +5,6 @@ router.post("/usuario", usuarioController.criarUsuario);
 router.get("/usuarios", usuarioController.listarUsuarios);
 
 router.post("/login", usuarioController.login);
-router.post("/logout", usuarioController.logout);
+// router.post("/logout", usuarioController.logout);
 
 module.exports = router;

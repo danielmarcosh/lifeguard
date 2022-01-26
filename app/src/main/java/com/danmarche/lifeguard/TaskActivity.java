@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -31,11 +32,18 @@ public class TaskActivity extends AppCompatActivity {
 
     private LinearLayout listView;
     private LayoutInflater inflater;
+    private long id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            this.id = extras.getInt("id");
+            Log.d("Usuario ID: ", String.valueOf(extras));
+        }
 
         cadastrar_tarefaBtn = findViewById(R.id.btn_cadastrar_tarefa);
         listView = findViewById(R.id.lista_tarefas);
@@ -52,6 +60,8 @@ public class TaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent janela_cadastrar = new Intent(TaskActivity.this, RegisterTaskActivity.class);
+                Log.d("INDO PARA TELA DE CADASTRO DE TAREFAS. ID ", String.valueOf(id));
+                janela_cadastrar.putExtra("id", id);
                 startActivity(janela_cadastrar);
             }
         });

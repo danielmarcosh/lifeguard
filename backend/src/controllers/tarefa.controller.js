@@ -10,7 +10,7 @@ exports.criarTarefa = async (req, res) => {
     [nome, descricao, data, id_usuario]
   );
 
-  return res.status(201).send({
+  return res.status(201).json({
     message: `${nome}. Tarefa criada com sucesso!`,
   });
 };
@@ -21,14 +21,9 @@ exports.listarTarefas = async (req, res) => {
     "SELECT * FROM tarefa WHERE id_usuario = $1",
     [id_usuario]
   );
-  console.log(JSON.stringify(rows));
+  console.log(JSON.parse(rows));
 
-  return res.status(200).send({
-    message: `Sucesso!`,
-    body: {
-      tarefas: JSON.stringify(rows),
-    },
-  });
+  return res.status(200).json({ rows });
 };
 exports.editarTarefas = async (req, res) => {
   const { id, nome, descricao, data } = req.body;
@@ -40,7 +35,7 @@ exports.editarTarefas = async (req, res) => {
     [nome, descricao, data, id]
   );
 
-  return res.status(200).send({
+  return res.status(200).json({
     message: `${nome}. Tarefa editada com sucesso!`,
   });
 };
@@ -49,7 +44,7 @@ exports.deletarTarefa = async (req, res) => {
 
   const { rows } = await db.query("DELETE FROM tarefa WHERE id = $1", [id]);
 
-  return res.status(201).send({
+  return res.status(201).json({
     message: `Tarefa deletada com sucesso!`,
   });
 };

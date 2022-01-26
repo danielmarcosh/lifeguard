@@ -85,6 +85,11 @@
             android:inputType="textPassword" />
 
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/loading_cadastro_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 
     <Button
         android:id="@+id/btn_cadastrar_novo_usuario"
