@@ -40,14 +40,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="Nome da Tarefa: "/>
+            android:text="Nome da Tarefa: " />
 
         <EditText
+            android:id="@+id/cadastro_nome_tarefa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:hint="informe o nome da tarefa"
-            android:inputType="text"/>
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -59,18 +60,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descrição:"/>
+            android:text="Descrição:" />
 
         <EditText
+            android:id="@+id/cadastro_descricao_tarefa"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:height="300dp"
+            android:layout_height="100dp"
+            android:gravity="top"
             android:hint="Tarefa ..."
-            android:textAlignment="inherit"
-            android:inputType="text|textMultiLine" />
+            android:inputType="text|textMultiLine"
+            android:textAlignment="inherit" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_add_tarefa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

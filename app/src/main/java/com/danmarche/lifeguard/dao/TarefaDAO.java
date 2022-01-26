@@ -9,6 +9,9 @@ import android.util.Log;
 import com.danmarche.lifeguard.modelo.Tarefa;
 import com.danmarche.lifeguard.persistencia.LifeGuardBDSQLite;
 
+import java.sql.Array;
+import java.util.ArrayList;
+
 public class TarefaDAO {
     private SQLiteDatabase banco;
     private LifeGuardBDSQLite lifeGuardBDSQLite;
@@ -27,12 +30,10 @@ public class TarefaDAO {
         contentValues.put("data", tarefa.getData());
         contentValues.put("nome", tarefa.getNome());
         contentValues.put("descricao", tarefa.getDescricao());
-        // id_usuario,data,nome,descricao
 
         long id = this.banco.insert("tarefa", null, contentValues);
 
         tarefa.setId(id);
-        fecharConexao();
 
         return id;
     }
@@ -49,6 +50,29 @@ public class TarefaDAO {
                     tuplas.getString(2), tuplas.getLong(3), tuplas.getLong(4));
         }
         return resultado;
+    }
+
+    public ArrayList<Tarefa> getAll() {
+        ArrayList<Tarefa> lista = new ArrayList<>();
+        String atributos[] = {"id", "nome", "descricao", "data", "id_usuario"};
+        Cursor tuplas = banco.query("tarefa", atributos, null, null,
+                null, null, null);
+
+        while (tuplas.moveToNext()) {
+            String nome = tuplas.getString(1);
+            String descricao = tuplas.getString(2);
+            Long data = tuplas.getLong(3);
+            Long usuario_id = tuplas.getLong(4);
+            Tarefa tarefa = new Tarefa(nome, descricao, data, usuario_id);
+            tarefa.setId(tuplas.getLong(0));
+
+            lista.add(tarefa);
+        }
+        return lista;
+    }
+
+    public void deletarTarefa(long id) {
+        banco.delete("tarefa", "id=" + id, null);
     }
 
     private void abrirConexao() {

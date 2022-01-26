@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.danmarche.lifeguard.modelo.Tarefa;
 import com.danmarche.lifeguard.modelo.Usuario;
 import com.danmarche.lifeguard.persistencia.LifeGuardBDSQLite;
 
@@ -31,7 +32,6 @@ public class UsuarioDAO {
         long id = this.banco.insert("usuario", null, contentValues);
 
         usuario.setId(id);
-        fecharConexao();
 
         return id;
     }
@@ -46,7 +46,20 @@ public class UsuarioDAO {
         }
         Log.d("Resultado: ", String.valueOf(resultado));
         tulpas.close();
-        fecharConexao();
+        return resultado;
+    }
+
+    public long getUser() {
+
+        Log.d("Buscando... ", " Usuario");
+        long resultado;
+
+        String atributos[] = {"id"};
+        Cursor tuplas = banco.query("usuario", atributos, null, null,
+                null, null, null);
+        tuplas.moveToFirst();
+        resultado = tuplas.getLong(0);
+        Log.d("Resultado: ", String.valueOf(resultado));
         return resultado;
     }
 

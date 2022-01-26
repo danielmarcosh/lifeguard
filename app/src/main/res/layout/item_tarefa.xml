@@ -16,6 +16,7 @@
             android:text="Nome da Tarefa:" />
 
         <TextView
+            android:id="@+id/item_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
@@ -35,6 +36,7 @@
             android:text="Data Criação:" />
 
         <TextView
+            android:id="@+id/item_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
@@ -54,11 +56,12 @@
             android:text="Descrição da Tarefa:" />
 
         <TextView
+            android:id="@+id/item_descricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:layout_weight="1"
-            android:height="200dp"
+            android:height="80dp"
             android:text="Descrição da tarefa" />
     </LinearLayout>
 
@@ -70,12 +73,14 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/item_editar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="50dp"
             android:text="Editar" />
 
         <Button
+            android:id="@+id/item_excluir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Excluir" />
