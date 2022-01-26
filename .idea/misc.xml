@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/drawable/ic_my_icon.xml" value="0.19583333333333333" />
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/drawable/ic_plus_24.xml" value="0.19583333333333333" />
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/layout/activity_cadastro_usuario.xml" value="0.3333333333333333" />
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/layout/activity_edit_task.xml" value="0.3333333333333333" />
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/layout/activity_register_task.xml" value="0.3333333333333333" />
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/layout/activity_task.xml" value="0.3333333333333333" />
+        <entry key="..\:/daniel-marcos/sistemas de informacao/DISPOSITIVOS MOVEIS/lifeguard/app/src/main/res/layout/item_tarefa.xml" value="0.3333333333333333" />
         <entry key="..\:/projetos-mobile/lifeguard/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/projetos-mobile/lifeguard/app/src/main/res/layout/activity_register_task.xml" value="0.28940217391304346" />
         <entry key="..\:/projetos-mobile/lifeguard/app/src/main/res/layout/activity_task.xml" value="0.28940217391304346" />
