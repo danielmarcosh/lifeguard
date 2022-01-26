@@ -2,7 +2,7 @@ package com.danmarche.lifeguard.modelo;
 
 import java.util.Date;
 
-public class Tarefa {
+public class Tarefa implements Comparable<Tarefa> {
     private long id;
     private String nome;
     private String descricao;
@@ -73,5 +73,10 @@ public class Tarefa {
                 ", data=" + data +
                 ", id_usuario=" + id_usuario +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Tarefa tarefa) {
+        return this.data.compareTo(tarefa.getData());
     }
 }

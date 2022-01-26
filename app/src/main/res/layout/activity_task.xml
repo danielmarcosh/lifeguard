@@ -5,73 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
+    android:padding="15dp"
     tools:context=".TaskActivity">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_voltar_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="voltar" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="1">
-
-            <TableRow>
-
-                <TextView
-                    android:padding="3dip"
-                    android:text="1" />
-
-                <TextView
-                    android:gravity="left"
-                    android:padding="3dip"
-                    android:text="28/11/2021" />
-
-                <TextView
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="Programação de Dispositivos Moveis" />
-            </TableRow>
-
-            <TableRow>
-
-                <TextView
-                    android:padding="3dip"
-                    android:text="2" />
-
-                <TextView
-                    android:gravity="left"
-                    android:padding="3dip"
-                    android:text="29/11/2021" />
-
-                <TextView
-                    android:gravity="right"
-                    android:padding="3dip"
-                    android:text="Estudar" />
-            </TableRow>
-        </TableLayout>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_cadastrar_tarefa"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="25dp"
-        android:text="@string/add_tarefas" />
+        android:layout_marginBottom="12dp"
+        android:text="Lista de Trefas"
+        android:textSize="30sp" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/lista_tarefas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_cadastrar_tarefa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="cadastrar tarefa"
+        android:src="@drawable/ic_my_icon" />
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
